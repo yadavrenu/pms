@@ -1,0 +1,53 @@
+<html>
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <form action='' #signUpForm="ngForm" (ngSubmit)='signUp(signUpForm)' method='post'>
+    <label>
+      <p class="label-txt">ENTER YOUR PUBG USERNAME</p>
+      <input type="text" name="name" [(ngModel)]="name" class="input" >
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+
+    <label>
+      <p class="label-txt">ENTER YOUR PUBG ID</p>
+      <input type="text" class="input" [(ngModel)]="id" name="id">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+
+    <label>
+      <p class="label-txt">ENTER YOUR DISCORD TAG</p>
+      <input type="text" class="input" [(ngModel)]="dTag" name="dTag">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+
+    <label>
+      <p class="label-txt">ENTER YOUR PASSWORD</p>
+      <input type="text" class="input" [(ngModel)]="password" name="password">
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+
+    <label>
+        <p class="label-txt">ENTER YOUR ROLE</p>
+        <input type="text" class="input" [(ngModel)]="role" name="role">
+        <div class="line-box">
+          <div class="line"></div>
+        </div>
+      </label>
+
+    <button type="submit" name="submit" class="button" value="Sign Up">Add Player </button> <p>&emsp;</p><br />
+    <!-- <div class="copy-text">Already have an account? <a (click)='login()'>Login </a>here</div> -->
+  </form>
+</body>
+</html>

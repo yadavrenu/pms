@@ -1,0 +1,36 @@
+<head>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  </head>
+
+  <section class="login-block">
+      <br />
+      <div class="container">
+
+        <div class="row">
+              <div class="col-md-4 login-sec">
+                  <h2 class="text-center">Login</h2>
+                  <br />
+                  <br />
+                  <form class="login-form" #loginForm="ngForm" (ngSubmit)='login(loginForm)' method="post" action="">
+                      <div class="form-group">
+                          <label for="id" class="text-uppercase font">Email</label>
+                          <input type="text" class="form-control" [(ngModel)]="email" name="email" placeholder="">
+                      </div>
+                      <div class="form-group">
+                          <label for="password" class="text-uppercase font">Password</label>
+                          <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="" >
+                      </div>
+                      <br />
+                      <div class="form-check">
+                      <button type="submit" name="submit" class="btn btn-login float-right" value="Login">Login</button>
+                      </div>
+                  </form>
+                  <!-- <div class="copy-text">New User? <a (click)='goToSignUp()'>Sign Up </a>here</div> -->
+              </div>
+              <div class="col-md-8">
+              <img class="img-fluid" src="./pubg3.png" alt="First slide">
+          </div>
