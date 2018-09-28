@@ -1,37 +1,16 @@
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<html>
+  <head>
+
   </head>
-<div align='center' class="header" >
- <h4> Welcome, You are admin.</h4>
-</div>
-
-    <h2>All Players</h2>
-    <div id="players">
-       <table class="table table-striped">
-         <thead>
-           <th>User Id</th>
-           <th>Name</th>
-           <th>Discord Tag</th>
-           <th>Role</th>
-           <th>Options</th>
-         </thead>
-         <tbody *ngFor='let player of players'>
-         <tr>
-           <td>{{player.id}}</td>
-           <td>{{player.name}}</td>
-           <td>{{player.dTag}}</td>
-           <td>{{player.role}}</td>
-           <td><button class='btn' (click)="delete(player.id)">Delete</button></td>
-         </tr>
-        </tbody>
-       </table>
-
-    </div>
-
-<button id="logOut" (click)="logOut()">Log Out</button>
-<button id="addPlayer" (click)="addPlayer()">Add Player</button>
-
+  <body>
+    <h2>Hello {{myData.user.fname}}, your details are :</h2><br />
+    <table>
+      <tr><th> Full Name :</th><td>{{myData.user.fname}} {{myData.user.lname}}</td></tr>
+      <tr><th> Username :</th><td>{{myData.user.userName}}</td></tr>
+      <tr><th> Email Adderss :</th><td>{{myData.user.email}}</td></tr>
+      <tr><th> Gender</th><td>{{myData.user.gender}}</td></tr>
+    </table>
+    <br /><br />
+    <button (click)=logOut()>LogOut</button>
+  </body>
+</html>

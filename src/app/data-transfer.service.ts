@@ -9,8 +9,7 @@ import { HttpHeaders } from '../../node_modules/@angular/common/http';
 })
 export class DataTransferService {
 
-  url='http://127.0.0.1:8000/api/auth/';
-  url2='http://127.0.0.1:8000/api/players';
+  url='http://127.0.0.1:8000/api/';
 
   options={
     headers : new HttpHeaders({
@@ -18,9 +17,15 @@ export class DataTransferService {
      'Accept':'application/json'
      })}
 
+  options2={
+    headers : new HttpHeaders({
+      'COntent-Type' : 'application/x-www-form-urlencoded'
+    })
+  }
+
   signUp(data):Observable<any> //Creates a player
   {
-    return this.http.post(this.url2,data,this.options);
+    return this.http.post(this.url+'register',data,this.options);
   }
 
   login(data):Observable<any> //For the Admin to login
@@ -28,14 +33,24 @@ export class DataTransferService {
     return this.http.post(this.url+'login', data, this.options );
   }
 
-  showData():Observable<any> //Gets all existing Players
+  getToken(id):Observable<any>
   {
-    return this.http.get(this.url2,this.options);
+    return this.http.get(this.url+'token/'+id,this.options);
   }
 
-  delete(player):Observable<any> //Deletes a particular player
+  verifyEmail(id):Observable<any>
   {
-    return this.http.delete(this.url2+'/'+player,this.options);
+    return this.http.get(this.url+'verify/'+id,this.options);
+  }
+
+  getUser(token):Observable<any>
+  {
+    return this.http.get(this.url+'user?token='+token,this.options);
+  }
+
+  logOut(token):Observable<any>
+  {
+    return this.http.post(this.url+'logout','&token='+token,this.options);
   }
 
   constructor(private http:HttpClient) { }

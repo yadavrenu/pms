@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AdminComponent } from './admin/admin.component';
 import { PlayerComponent } from './player/player.component';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PlayerComponent } from './player/player.component';
     LoginComponent,
     SignUpComponent,
     AdminComponent,
-    PlayerComponent
+    PlayerComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,10 @@ import { PlayerComponent } from './player/player.component';
         path: 'admin',
         component: AdminComponent,
         canActivate:[AuthGuard]
-
+      },
+      {
+        path: 'verifyEmail',
+        component: VerifyEmailComponent
       }
     ])
   ],

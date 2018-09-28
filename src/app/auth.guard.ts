@@ -9,6 +9,7 @@ import { DataTransferService } from './data-transfer.service';
 })
 export class AuthGuard implements CanActivate {
   data=null;
+  registerationData=null;
 
   constructor(private auth:DataTransferService,private route:Router){}
 
@@ -17,6 +18,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
       this.data= localStorage.getItem("userData");
+      this.registerationData = localStorage.getItem("registeredData");
       if(this.data===null){
        this.route.navigate(['']);
        return false;

@@ -75,6 +75,12 @@ input:focus + .line-box .line {
   top: -3em;
 }
 
+h1{
+  text-align: center;
+  font-family: sans-serif;
+  color: rgb(120,120,120);
+}
+
 button {
   display: inline-block;
   padding: 12px 24px;

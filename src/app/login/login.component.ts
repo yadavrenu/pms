@@ -9,25 +9,32 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  name;
-  password;
+  user;
 
   public login(form: NgForm)
   {
     var myJson= JSON.stringify(form.value);
     console.log(myJson);
-
     this.service.login(myJson).subscribe(
       data=>{
         console.log(data);
-        if(data.access_token){
-          localStorage.setItem("userData",myJson);
-          this.route.navigate(['admin']);
+        if(data.token){
+          console.log(data.token);
+          localStorage.setItem("token",JSON.stringify(data.token));
+          this.service.getUser(data.token).subscribe(
+            user=>{
+              console.log(user);
+              localStorage.setItem("userData",JSON.stringify(user));
+              this.route.navigate(['admin']);
+            },
+            error=>{
+
+            }
+          )
         }
       },
       error=>{
-        alert("Enter Valid Details");
+        alert(error);
       }
     )
 

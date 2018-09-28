@@ -18,8 +18,9 @@ export class SignUpComponent implements OnInit {
     console.log(myJson);
     this.service.signUp(myJson).subscribe(
       data=>{
-        console.log(data);
-        this.route.navigate(['admin']);
+        console.log('this is what i want',data);
+        localStorage.setItem("registeredData",JSON.stringify(data));
+        this.route.navigate(['verifyEmail']);
       }
     )
   }
