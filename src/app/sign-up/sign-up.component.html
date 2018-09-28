@@ -9,7 +9,7 @@
   <form action='' #signUpForm="ngForm" (ngSubmit)='signUp(signUpForm)' method='post'>
     <label>
       <p class="label-txt">ENTER FIRST NAME</p>
-      <input type="text" name="fname" [(ngModel)]="fname" class="input" required>
+      <input type="text" name="fname" [(ngModel)]="fname" class="input" size="15" required>
       <div class="line-box">
         <div class="line"></div>
       </div>
@@ -17,7 +17,7 @@
 
     <label>
       <p class="label-txt">ENTER LAST NAME</p>
-      <input type="text" name="lname" [(ngModel)]="lname" class="input" required>
+      <input type="text" name="lname" [(ngModel)]="lname" class="input" size="15" required>
       <div class="line-box">
         <div class="line"></div>
       </div>
@@ -25,7 +25,7 @@
 
     <label>
       <p class="label-txt">ENTER USERNAME</p>
-      <input type="text" name="userName" [(ngModel)]="userName" class="input" required>
+      <input type="text" name="userName" [(ngModel)]="userName" class="input" size="30" required>
       <div class="line-box">
         <div class="line"></div>
       </div>
@@ -33,7 +33,7 @@
 
     <label>
       <p class="label-txt">ENTER EMAIL ID</p>
-      <input type="text" class="input" [(ngModel)]="email" name="email" required>
+      <input type="email" class="input" [(ngModel)]="email" name="email" required>
       <div class="line-box">
         <div class="line"></div>
       </div>

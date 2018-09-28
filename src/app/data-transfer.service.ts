@@ -33,14 +33,19 @@ export class DataTransferService {
     return this.http.post(this.url+'login', data, this.options );
   }
 
+  showAllUsers(token):Observable<any>
+  {
+    return this.http.post(this.url+'allUsers','&token='+token,this.options2);
+  }
+
   getToken(id):Observable<any>
   {
     return this.http.get(this.url+'token/'+id,this.options);
   }
 
-  verifyEmail(id):Observable<any>
+  verifyEmail(id,token):Observable<any>
   {
-    return this.http.get(this.url+'verify/'+id,this.options);
+    return this.http.post(this.url+'verify/'+id,'&token='+token,this.options2);
   }
 
   getUser(token):Observable<any>
@@ -50,7 +55,17 @@ export class DataTransferService {
 
   logOut(token):Observable<any>
   {
-    return this.http.post(this.url+'logout','&token='+token,this.options);
+    return this.http.post(this.url+'logout','&token='+token,this.options2);
+  }
+
+  newPassword(email):Observable<any>
+  {
+    return this.http.post(this.url+'newPassword','&email='+email,this.options2);
+  }
+
+  resetPassword(password,token,mail):Observable<any>
+  {
+    return this.http.post(this.url+'resetPassword','&token='+token+'&password='+password+'&email='+mail,this.options2);
   }
 
   constructor(private http:HttpClient) { }

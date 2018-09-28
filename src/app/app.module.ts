@@ -12,8 +12,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { AdminComponent } from './admin/admin.component';
-import { PlayerComponent } from './player/player.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +23,10 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     LoginComponent,
     SignUpComponent,
     AdminComponent,
-    PlayerComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,17 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
       {
         path: 'verifyEmail',
         component: VerifyEmailComponent
+      },
+      {
+        path: 'forgotPassword',
+        component: ForgotPasswordComponent
+      },
+      { path: 'resetPassword',
+      component: ResetPasswordComponent
+      },
+      {
+        path: 'user',
+        component: UserComponent
       }
     ])
   ],

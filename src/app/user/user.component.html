@@ -1,0 +1,16 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <h2>Hello {{myData.user.fname}}, your details are :</h2><br />
+    <table>
+      <tr><th> Full Name :</th><td>{{myData.user.fname}} {{myData.user.lname}}</td></tr>
+      <tr><th> Username :</th><td>{{myData.user.userName}}</td></tr>
+      <tr><th> Email Adderss :</th><td>{{myData.user.email}}</td></tr>
+      <tr><th> Gender</th><td>{{myData.user.gender}}</td></tr>
+    </table>
+    <br /><br />
+    <button (click)=logOut()>LogOut</button>
+  </body>
+</html>

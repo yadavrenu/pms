@@ -12,33 +12,18 @@ import { NgForm } from '@angular/forms';
 export class VerifyEmailComponent implements OnInit {
   myData;
 
-  matchToken(form: NgForm) //needs more logic
+  matchToken(form: NgForm)
   {
-    console.log(form.value);
-    // console.log("this is the id passed",this.myData.data.id);
     var myToken= form.value.token;
-    this.service.getToken(this.myData.data.id).subscribe(
+    this.service.verifyEmail(this.myData.data.id,myToken).subscribe(
       data=>{
-        // console.log("this is the token recieved",data);
-        // console.log("this is the entered",myToken);
-        if(data.token==form.value.token){
-          //set verified to 1
-          this.service.verifyEmail(this.myData.data.id).subscribe(
-            data2=>{
-             console.log(data2);
-            alert('Email confirmed. Login to your new account');
-            this.route.navigate(['']);
-            },
-            error=>{
-              console.log(error);
-            }
-          )
-        }
-        else
-        alert('Wrong token');
+        // console.log(data);
+        alert('Email confirmed. Login to your new account');
+        this.route.navigate(['']);
       },
       error=>{
-        alert("Enter Valid token");
+        // console.log(error);
+        alert(error);
       }
     )
   }
@@ -47,7 +32,6 @@ export class VerifyEmailComponent implements OnInit {
     private service:DataTransferService) { }
 
   ngOnInit() {
-
     this.myData = JSON.parse(localStorage.getItem("registeredData"));
   }
 
